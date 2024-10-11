@@ -1,0 +1,22 @@
+INFO:werkzeug:172.31.196.35 - - [03/Oct/2024 07:00:07] "POST /continue_analysis HTTP/1.1" 200 -
+INFO:werkzeug:172.31.196.35 - - [03/Oct/2024 07:00:09] "GET /survey HTTP/1.1" 200 -
+INFO:werkzeug:172.31.196.35 - - [03/Oct/2024 07:00:09] "GET /static/images/logo.svg HTTP/1.1" 304 -
+INFO:werkzeug:172.31.196.35 - - [03/Oct/2024 07:00:09] "GET /static/js/survey.js HTTP/1.1" 200 -
+INFO:werkzeug:172.31.196.35 - - [03/Oct/2024 07:00:09] "GET /static/css/survey.css HTTP/1.1" 200 -
+INFO:werkzeug:172.31.196.35 - - [03/Oct/2024 07:00:09] "GET /static/css/common.css HTTP/1.1" 304 -
+DEBUG:root:Received survey data: {'questions': [{'department': 'Вопросы по проблеме с чистотой и санитарным состоянием помещений', 'questions': ['Как часто проводится уборка помещений?', 'Какие средства и инвентарь используются для уборки?', 'Обучены ли сотрудники, ответственные за уборку, современным методам и технологиям клининга?', 'Существует ли регулярный контроль качества уборки?', 'Соблюдаются ли нормы и требования санитарно-эпидемиологического законодательства?']}], 'answers': ['dfsfdsfsdf\n', 'длжюлджлдж', 'рапрапрапр', 'estrsdfsd', 'апвапвапвап']}
+INFO:werkzeug:172.31.196.35 - - [03/Oct/2024 07:00:26] "POST /submit-survey HTTP/1.1" 200 -
+INFO:werkzeug:172.31.196.35 - - [03/Oct/2024 07:00:29] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.31.196.35 - - [03/Oct/2024 07:00:30] "GET /static/css/common.css HTTP/1.1" 304 -
+INFO:werkzeug:172.31.196.35 - - [03/Oct/2024 07:00:30] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.31.196.35 - - [03/Oct/2024 07:00:30] "GET /static/js/dom.js HTTP/1.1" 304 -
+INFO:werkzeug:172.31.196.35 - - [03/Oct/2024 07:00:30] "GET /static/js/tabs.js HTTP/1.1" 304 -
+INFO:werkzeug:172.31.196.35 - - [03/Oct/2024 07:00:30] "GET /static/js/config.js HTTP/1.1" 304 -
+INFO:werkzeug:172.31.196.35 - - [03/Oct/2024 07:00:30] "GET /static/js/state.js HTTP/1.1" 304 -
+INFO:werkzeug:172.31.196.35 - - [03/Oct/2024 07:00:30] "GET /static/js/keyAspects.js HTTP/1.1" 304 -
+INFO:werkzeug:172.31.196.35 - - [03/Oct/2024 07:00:30] "GET /static/js/utils.js HTTP/1.1" 304 -
+INFO:werkzeug:172.31.196.35 - - [03/Oct/2024 07:00:30] "GET /static/js/researchPlan.js HTTP/1.1" 304 -
+INFO:werkzeug:172.31.196.35 - - [03/Oct/2024 07:00:30] "GET /static/js/dataCollection.js HTTP/1.1" 304 -
+INFO:werkzeug:172.31.196.35 - - [03/Oct/2024 07:00:30] "GET /static/js/pagination.js HTTP/1.1" 304 -
+INFO:werkzeug:172.31.196.35 - - [03/Oct/2024 07:00:30] "GET /static/js/main.js HTTP/1.1" 304 -
+INFO:werkzeug:172.31.196.35 - - [03/Oct/2024 07:00:30] "GET /static/images/logo.svg HTTP/1.1" 304 -

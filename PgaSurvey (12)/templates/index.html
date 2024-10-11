@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Система универсального анализа</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/collected_data.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/modal.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .instruction-block {
+            background-color: #f0f0f0;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+        .instruction-block h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+        .instruction-block ul {
+            padding-left: 20px;
+        }
+        #loadingIndicator {
+            margin-bottom: 10px;
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    {% include 'header.html' %}
+    
+    <div class="main-container">
+        <aside class="sidebar">
+            <h2 class="sidebar-title">Предыдущие анализы</h2>
+            <ul class="previous-analyses-list">
+                <!-- Здесь будет список предыдущих анализов -->
+            </ul>
+            <div class="sidebar-buttons">
+                <button id="newAnalysisBtn" class="btn-primary">Новый анализ</button>
+                <button id="startSurveyBtn" class="btn-secondary">Начать опрос</button>
+            </div>
+        </aside>
+        
+        <main class="content">
+            <div class="analysis-input">
+                <textarea id="questionInput" class="question-input" placeholder="Введите ваш вопрос для анализа..."></textarea>
+                <button id="startAnalysisBtn" class="btn-primary">Начать анализ</button>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div id="progressBar" class="progress-bar-fill"></div>
+                </div>
+                <span id="progressPercentage" class="progress-percentage">0% завершено</span>
+            </div>
+
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="keyAspects">Ключевые аспекты</button>
+                <button class="tab-btn" data-tab="researchPlan">План исследования</button>
+                <button class="tab-btn" data-tab="collectedData">Собранные данные</button>
+                <button class="tab-btn" data-tab="conclusions">Выводы</button>
+            </div>
+
+            <div id="keyAspects" class="tab-content active">
+                <h2 class="tab-title">Ключевые аспекты</h2>
+                <!-- Key aspects content will be dynamically added here -->
+            </div>
+
+            <div id="researchPlan" class="tab-content">
+                <h2 class="tab-title">План исследования</h2>
+                <div class="research-plan-section">
+                    <h3>Релевантные отделы</h3>
+                    <ul id="departmentList"></ul>
+                    <button id="editDepartmentsBtn" class="btn-secondary">Редактировать отделы</button>
+                </div>
+                <div class="research-plan-section">
+                    <h3>Вопросы для интервью</h3>
+                    <div id="questionsList"></div>
+                    <button id="editQuestionsBtn" class="btn-secondary">Редактировать вопросы</button>
+                    <button id="regenerateQuestionsBtn" class="btn-secondary">Перегенерировать вопросы</button>
+                </div>
+                <button id="saveChangesBtn" class="btn-primary">Сохранить изменения</button>
+                <button id="startResearchBtn" class="btn-primary">Начать исследование</button>
+            </div>
+
+            <div id="collectedData" class="tab-content">
+                <h2 class="tab-title">Собранные данные</h2>
+                <!-- Collected data content will be dynamically added here -->
+            </div>
+
+            <div id="conclusions" class="tab-content">
+                <h2 class="tab-title">Выводы</h2>
+                <div class="conclusions-container">
+                    <div class="summary-section">
+                        <h3>Краткая сводка:</h3>
+                        <div id="summary" class="editable-content" contenteditable="true">
+                            [Здесь будет краткое изложение проблемы, ключевых находок и основных выводов]
+                        </div>
+                    </div>
+                    <div class="recommendations-section">
+                        <h3>Рекомендации:</h3>
+                        <ul id="recommendations" class="editable-content" contenteditable="true">
+                        </ul>
+                    </div>
+                    <div class="tasks-section">
+                        <h3>Рекомендуемые задачи:</h3>
+                        <ul id="tasksList" class="editable-list">
+                            <li contenteditable="true">[Задача 1]</li>
+                            <li contenteditable="true">[Задача 2]</li>
+                            <li contenteditable="true">[Задача 3]</li>
+                        </ul>
+                        <button id="addTaskBtn" class="btn-secondary">Добавить задачу</button>
+                    </div>
+                    <button id="createTasksBtn" class="btn-primary">Создать задачи</button>
+                    <button id="scheduleMeetingBtn" class="btn-primary">Запланировать встречу</button>
+                </div>
+            </div>
+
+            <div class="instruction-block">
+                <h3>Как пользоваться системой универсального анализа</h3>
+                <ul>
+                    <li><strong>Начало работы:</strong> Введите ваш вопрос или проблему в текстовое поле и нажмите "Начать анализ".</li>
+                    <li><strong>Ключевые аспекты:</strong> Здесь вы увидите основные моменты, выявленные в ходе анализа вашего вопроса.</li>
+                    <li><strong>План исследования:</strong> Просмотрите и отредактируйте план для дальнейшего исследования проблемы.</li>
+                    <li><strong>Собранные данные:</strong> После проведения исследования, здесь будут отображаться полученные данные.</li>
+                    <li><strong>Выводы:</strong> Ознакомьтесь с итоговыми выводами и рекомендациями на основе проведенного анализа.</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for scheduling meeting -->
+    <div id="scheduleMeetingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Планирование встречи</h2>
+            <form id="scheduleMeetingForm">
+                <label for="participants">Участники:</label>
+                <input type="text" id="participants" name="participants" required>
+                
+                <label for="meetingDate">Дата и время:</label>
+                <input type="datetime-local" id="meetingDate" name="meetingDate" required>
+                
+                <label for="agenda">Повестка встречи:</label>
+                <!-- The loading indicator will be inserted here dynamically -->
+                <textarea id="agenda" name="agenda" required></textarea>
+                
+                <label for="attachments">Прикрепленные материалы:</label>
+                <input type="file" id="attachments" name="attachments" multiple>
+                
+                <label for="comments">Комментарии:</label>
+                <textarea id="comments" name="comments"></textarea>
+                
+                <button type="submit" class="btn-primary">Запланировать встречу</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/config.js') }}" type="module"></script>
+    <script src="{{ url_for('static', filename='js/state.js') }}" type="module"></script>
+    <script src="{{ url_for('static', filename='js/utils.js') }}" type="module"></script>
+    <script src="{{ url_for('static', filename='js/dom.js') }}" type="module"></script>
+    <script src="{{ url_for('static', filename='js/tabs.js') }}" type="module"></script>
+    <script src="{{ url_for('static', filename='js/keyAspects.js') }}" type="module"></script>
+    <script src="{{ url_for('static', filename='js/researchPlan.js') }}" type="module"></script>
+    <script src="{{ url_for('static', filename='js/dataCollection.js') }}" type="module"></script>
+    <script src="{{ url_for('static', filename='js/pagination.js') }}" type="module"></script>
+    <script src="{{ url_for('static', filename='js/conclusions.js') }}" type="module"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}" type="module"></script>
+    <script src="{{ url_for('static', filename='js/modal.js') }}"></script>
+</body>
+</html>

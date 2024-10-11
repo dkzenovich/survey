@@ -1,0 +1,387 @@
+/* Main page specific styles */
+.main-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* ... (previous styles remain unchanged) */
+
+/* Research Plan styles */
+.research-plan-section {
+  margin-bottom: 2rem;
+}
+
+.sidebar {
+  width: 250px;
+  margin-right: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+}
+
+.sidebar-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.previous-analyses-list {
+  list-style-type: none;
+  margin-bottom: 1rem;
+  padding-left: 0;
+}
+
+.sidebar-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.content {
+  flex: 1;
+}
+
+.analysis-input {
+  margin-bottom: 1.5rem;
+}
+
+.question-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.progress-container {
+  margin-bottom: 1.5rem;
+}
+
+.progress-bar {
+  background-color: #e0e0e0;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: var(--secondary-color);
+  width: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.progress-percentage {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tab-btn {
+  padding: 0.75rem 1rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color);
+  border-bottom: 2px solid transparent;
+}
+
+.tab-btn.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+.tab-content {
+  display: none;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* Key Aspects styles */
+.key-aspects-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.key-aspects-list li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.aspect-text {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.edit-aspect-btn,
+.delete-aspect-btn,
+.save-aspect-btn,
+.add-aspect-btn,
+.save-new-aspect-btn,
+.cancel-new-aspect-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.delete-aspect-btn {
+  background-color: #e74c3c;
+}
+
+.edit-aspect-input,
+.new-aspect-input {
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.add-aspect-btn {
+  margin-top: 10px;
+}
+
+/* Responsive design for main page */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    flex: 1 0 50%;
+    text-align: center;
+  }
+}
+
+
+/**ключевые аспекты*/
+/* Добавьте эти стили в ваш файл CSS */
+
+.key-aspects-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.aspect-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.aspect-item:hover {
+    background-color: #e9ecef;
+}
+
+.aspect-text {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.aspect-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-aspect-input,
+.new-aspect-input {
+    flex-grow: 1;
+    padding: 5px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.key-aspects-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.error-message {
+    color: #dc3545;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .aspect-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .aspect-actions {
+        margin-top: 10px;
+    }
+
+    .key-aspects-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/*для собранной информации*/
+
+.filter-sort-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filter-select, .sort-button {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.data-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.data-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.data-card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.department {
+  font-weight: bold;
+}
+
+.question {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.answer {
+  color: #333;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.status-new { background-color: #28a745; color: white; }
+.status-inProgress { background-color: #ffc107; color: black; }
+.status-resolved { background-color: #17a2b8; color: white; }
+.status-closed { background-color: #6c757d; color: white; }
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination-button {
+  padding: 8px 12px;
+  margin: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

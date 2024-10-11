@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Фон -->
+  <rect width="800" height="600" fill="#f0f0f0"/>
+  
+  <!-- Верхняя панель -->
+  <rect width="800" height="50" fill="#4a90e2"/>
+  <text x="20" y="30" fill="white" font-family="Arial, sans-serif" font-size="16">Логотип</text>
+  <text x="400" y="30" fill="white" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">Система универсального анализа</text>
+  <text x="780" y="30" fill="white" font-family="Arial, sans-serif" font-size="16" text-anchor="end">Выход</text>
+  
+  <!-- Боковая панель -->
+  <rect x="0" y="50" width="200" height="550" fill="#e0e0e0"/>
+  <text x="20" y="80" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Предыдущие анализы</text>
+  <text x="20" y="110" font-family="Arial, sans-serif" font-size="12">Анализ 1</text>
+  <text x="20" y="130" font-family="Arial, sans-serif" font-size="12">Анализ 2</text>
+  <rect x="20" y="160" width="160" height="30" rx="5" fill="#4a90e2"/>
+  <text x="100" y="180" fill="white" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Новый анализ</text>
+  
+  <!-- Основная область -->
+  <rect x="220" y="70" width="560" height="40" rx="5" fill="white" stroke="#ccc"/>
+  <text x="230" y="95" font-family="Arial, sans-serif" font-size="12" fill="#999">Введите ваш запрос</text>
+  <rect x="220" y="120" width="120" height="30" rx="5" fill="#4caf50"/>
+  <text x="280" y="140" fill="white" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Начать анализ</text>
+  
+  <!-- Индикатор прогресса -->
+  <rect x="220" y="170" width="560" height="20" rx="10" fill="#e0e0e0"/>
+  <rect x="220" y="170" width="280" height="20" rx="10" fill="#4a90e2"/>
+  <text x="500" y="185" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">50% завершено</text>
+  
+  <!-- Вкладки -->
+  <rect x="220" y="210" width="140" height="30" rx="5" fill="#4a90e2"/>
+  <text x="290" y="230" fill="white" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Ключевые аспекты</text>
+  <rect x="360" y="210" width="140" height="30" rx="5" fill="#e0e0e0"/>
+  <text x="430" y="230" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">План исследования</text>
+  <rect x="500" y="210" width="140" height="30" rx="5" fill="#e0e0e0"/>
+  <text x="570" y="230" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Собранные данные</text>
+  <rect x="640" y="210" width="140" height="30" rx="5" fill="#e0e0e0"/>
+  <text x="710" y="230" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Выводы</text>
+  
+  <!-- Область контента вкладки -->
+  <rect x="220" y="240" width="560" height="200" fill="white" stroke="#ccc"/>
+  <text x="240" y="270" font-family="Arial, sans-serif" font-size="12">Содержимое активной вкладки</text>
+  
+  <!-- Область итогового отчета -->
+  <rect x="220" y="460" width="560" height="120" fill="white" stroke="#ccc"/>
+  <text x="240" y="490" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Итоговый отчет</text>
+  <text x="240" y="520" font-family="Arial, sans-serif" font-size="12">Здесь будет отображаться итоговый отчет по завершении анализа.</text>
+</svg>

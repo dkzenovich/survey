@@ -1,0 +1,12 @@
+<header class='header'>
+    <nav class='nav'>
+        <div class='nav-left'>
+            <img src='{{ url_for('static', filename='images/logo.svg') }}' alt='Logo' class='logo'>
+            <h1 class='title'>Система универсального анализа</h1>
+        </div>
+        <button class='btn-logout'>
+            <svg><use xlink:href='{{ url_for('static', filename='images/icons.svg') }}#icon-logout'></use></svg>
+            Выход
+        </button>
+    </nav>
+</header>

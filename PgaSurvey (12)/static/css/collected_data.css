@@ -1,0 +1,65 @@
+.survey-data-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.data-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.data-card {
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #f0f8ff; /* Светло-голубой цвет */
+    color: #2c3e50; /* Темно-синий цвет для текста */
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.card-header:hover {
+    background-color: #e6f3ff; /* Чуть более насыщенный цвет при наведении */
+}
+
+.question-text {
+    flex-grow: 1;
+    font-weight: 500;
+}
+
+.toggle-answer {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+    color: #3498db; /* Синий цвет для стрелки */
+}
+
+.card-body {
+    background-color: white;
+    padding: 15px 20px;
+    display: none;
+    border-top: 1px solid #e0e0e0;
+}
+
+.answer {
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Анимация для стрелки при открытии/закрытии */
+.card-header.active .toggle-answer {
+    transform: rotate(180deg);
+}
