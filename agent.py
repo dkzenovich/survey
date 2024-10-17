@@ -4,7 +4,7 @@ from langchain_anthropic import ChatAnthropic
 from langchain_core.prompts import ChatPromptTemplate
 from typing import List, Dict, Any
 
-ANTHROPIC_API_KEY = "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"
+ANTHROPIC_API_KEY = "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"
 llm_s = ChatAnthropic(api_key=ANTHROPIC_API_KEY, model_name='claude-3-5-sonnet-20240620') #  claude-3-haiku-20240307
 
 logging.basicConfig(level=logging.DEBUG)
